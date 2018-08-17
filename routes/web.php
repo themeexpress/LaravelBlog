@@ -12,6 +12,5 @@
 */
 
 Route::get('/','WelcomeController@index');
-Route::get('/news',function(){
-	echo "This is News";
-});
+Route::get('/about','WelcomeController@about');
+Route::get('/category','categoryController@index');

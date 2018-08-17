@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,25 +13,16 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+       {
         $data=array();
         $data['header']=view('frontend.includes.header');
-        $data['home_slider']=view('frontend.home.home_slider');
-        $data['home_content']=view('frontend.home.home_content');
+        $data['home_slider']=view('frontend.category.category_banner');
+        $data['home_content']=view('frontend.category.category_content');
         $data['upper_footer']=view('frontend.includes.upper_footer');
         $data['copyright']=view('frontend.includes.copyright');
         $data['sidebar']=view('frontend.includes.sidebar');
         return view('master')->with($data);
     }
-     public function about()
-    {
-        $data=array();
-        $data['header']=view('frontend.includes.header');
-        $data['home_slider']=view('frontend.category.category_banner');
-        $data['home_content']=view('frontend.about.about_content');
-        $data['sidebar']=view('frontend.includes.sidebar');
-        $data['upper_footer']=view('frontend.includes.upper_footer');
-        $data['copyright']=view('frontend.includes.copyright');
-        return view('master')->with($data);
     }
 
     /**
